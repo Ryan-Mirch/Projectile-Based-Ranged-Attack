@@ -30,7 +30,6 @@ modulate = Color( 0, 1, 0.486275, 0.529412 )
 shape = SubResource( 1 )
 
 [node name="CollisionBox" type="Area2D" parent="."]
-unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 2
 monitorable = false

@@ -6,7 +6,6 @@ export var lifetime:float = 3
 
 onready var timer:Timer = $"%Timer"
 onready var hitbox = $"%HitBox"
-onready var collisionbox = $"%CollisionBox"
 
 var direction:Vector2
 # Called when the node enters the scene tree for the first time.
