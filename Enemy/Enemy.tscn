@@ -16,8 +16,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.2, -1.14967, 29.2702, -0.1, -4.74439, 0.2, -5.30255, -14.8247, -0.2, 5.30255, 0.25, 0, 0.52482, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.2, 0.5, 0.9 )
+"points": PoolRealArray( 0, -0.243241, -108.242, 0.1, 44.5, 54, -0.0251085, 2.16666, 0.112411, -9.70017, -2.16666, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.4 )
 }
 
 [sub_resource type="Animation" id=3]
@@ -39,12 +39,12 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 
-[node name="HitBox" type="StaticBody2D" parent="."]
+[node name="HurtBox" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

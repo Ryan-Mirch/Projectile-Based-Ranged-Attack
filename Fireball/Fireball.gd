@@ -1,11 +1,11 @@
 extends Node2D
 
-
+export var damage:float = 3
 export var speed:float = 5
 export var lifetime:float = 3
 
 onready var timer:Timer = $"%Timer"
-onready var hurtbox = $"%HurtBox"
+onready var hitbox = $"%HitBox"
 onready var collisionbox = $"%CollisionBox"
 
 var direction:Vector2
@@ -20,9 +20,10 @@ func _physics_process(delta):
 
 
 func _on_CollisionBox_body_entered(_body):
-	for collisionBox in hurtbox.get_overlapping_bodies():
-		var enemy = collisionBox.get_parent()
-		enemy.hit()
+	for collisionBox in hitbox.get_overlapping_bodies():
+		var enemy = collisionBox.owner
+		if enemy.has_method("take_damage"):
+			enemy.take_damage(damage)
 	queue_free()
 	
 	

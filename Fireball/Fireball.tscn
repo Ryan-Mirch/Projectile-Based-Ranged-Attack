@@ -19,12 +19,12 @@ lifetime = 4.0
 rotation = 1.57079
 texture = ExtResource( 2 )
 
-[node name="HurtBox" type="Area2D" parent="."]
+[node name="HitBox" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 modulate = Color( 0, 1, 0.486275, 0.529412 )
 shape = SubResource( 1 )
 
