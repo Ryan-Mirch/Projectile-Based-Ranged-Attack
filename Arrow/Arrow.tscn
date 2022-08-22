@@ -21,6 +21,7 @@ unique_name_in_owner = true
 position = Vector2( 24, 0 )
 collision_layer = 0
 collision_mask = 2
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 modulate = Color( 0, 1, 0.486275, 0.529412 )
@@ -29,5 +30,6 @@ shape = SubResource( 1 )
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 
+[connection signal="area_entered" from="HitBox" to="." method="_on_HitBox_area_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -19,8 +19,8 @@ func _physics_process(delta):
 	position += direction * speed * delta * 100
 
 
-func _on_CollisionBox_body_entered(_body):
-	for collisionBox in hitbox.get_overlapping_bodies():
+func _on_CollisionBox_area_entered(_area):
+	for collisionBox in hitbox.get_overlapping_areas():
 		var enemy = collisionBox.owner
 		if enemy.has_method("take_damage"):
 			enemy.take_damage(damage)
@@ -29,3 +29,6 @@ func _on_CollisionBox_body_entered(_body):
 	
 func _on_Timer_timeout():
 	queue_free()
+
+
+

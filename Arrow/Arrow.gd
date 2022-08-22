@@ -18,12 +18,12 @@ func _physics_process(delta):
 	position += direction * speed * delta * 100
 
 
-func _on_Timer_timeout():
-	queue_free()
-
-
-func _on_HitBox_body_entered(hurtbox):
-	var enemy = hurtbox.owner
+func _on_HitBox_area_entered(area):
+	var enemy = area.owner
 	if enemy.has_method("take_damage"):
 		enemy.take_damage(damage)
+	queue_free()
+	
+	
+func _on_Timer_timeout():
 	queue_free()
